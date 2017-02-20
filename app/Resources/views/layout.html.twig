@@ -1,0 +1,121 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<body>
+
+
+	<header>
+
+		<a href="{{ path('homepage') }}"><img src="{{ asset("dist/image/logo_AIPE.jpg") }}" alt="logo"/></a>
+		
+		<h1 class="amber-text text-darken-4">AIPE CLOYES SUR LE LOIR</h1>
+			<h2>Association Indépendante des Parents d'Eleves des Ecoles Publiques de Cloyes sur le Loir</h2>
+				<h3>Ecole Maternelle Jacques Prevert &amp Ecole Elémentaire Stéphane Pitard</h3>
+ 
+
+
+		 <nav>
+		    <div class="nav-wrapper amber darken-2">
+		   
+		      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+		      <ul class="left hide-on-med-and-down">
+		        <li><a href="{{ path('homepage') }}">Accueil</a></li>
+
+		        <li><a class="dropdown-button" href="#!" data-activates="representant">Les représentants<i class="material-icons right">arrow_drop_down</i></a></li>
+    
+		        	
+					<!-- Dropdown Structure -->
+					<ul id="representant" class="dropdown-content">
+					  <li><a href="{{ path('definition') }}">Qu'est ce qu'un représentant des parents d'élèves ?</a></li>
+					  <li><a href="{{ path('conseil') }}">Qu'est ce qu'un conseil d'école ?</a></li>
+					  <li class="divider"></li>
+					  <li><a href="{{ path('representants') }}">Les représentants des parents d'élèves</a></li>
+					  <li><a href="{{ path('compte_rendu') }}">Compte rendu des conseils d'école</a></li>
+					</ul>
+
+
+			    <li><a class="dropdown-button" href="#!" data-activates="association">L'Association<i class="material-icons right">arrow_drop_down</i></a></li>
+    
+		        	
+					<!-- Dropdown Structure -->
+					<ul id="association" class="dropdown-content col l3">
+					  <li><a href="{{ path('definition_assoc') }}">Pour quoi faire ?</a></li>
+					  <li><a href="{{ path('statuts') }}">Statuts</a></li>
+					  <li class="divider"></li>
+					  <li><a href="{{ path('adhesion') }}">Bulletin d'adhésion</a></li>
+					  <li><a href="{{ path('bureau') }}">Le bureau</a></li>
+					</ul>
+
+				<li><a href="agenda.php">Evenement et Agenda</a></li>
+    
+		        	
+				
+
+				 <li><a href="{{ path('contact') }}">Nous Contacter</a></li>
+
+				 <li><a href="admin.php">Administration</a></li>
+
+		      </ul>
+
+
+		      <ul class="side-nav" id="mobile-demo">
+		        <li><a href="{{ path('homepage') }}">Accueil</a></li>
+
+		        <li class="titre">Les représentants<i class="fa fa-users" aria-hidden="true"></i></li>
+		        <li><a href="{{ path('definition') }}">Les représentant des parents d'élèves ?</a></li>
+				<li><a href="{{ path('conseil') }}">Qu'est ce qu'un conseil d'école ?</a></li>	
+				<li><a href="{{ path('representants') }}">Les représentants des parents d'élèves</a></li>
+				<li><a href="{{ path('compte_rendu') }}">Compte rendu des conseils d'école</a></li>
+
+				<li class="titre">L'association<i class="material-icons">store</i></li>
+				<li><a href="{{ path('definition_assoc') }}">Pour quoi faire ?</a></li>
+				<li><a href="{{ path('statuts') }}">Statuts</a></li>		
+				<li><a href="{{ path('adhesion') }}">Bulletin d'adhésion</a></li>
+				<li><a href="{{ path('bureau') }}">Le bureau</a></li>
+
+				<li class="titre"><a href="agenda.php">Les Evenements et Agenda</a></li>
+
+				<li><a href="{{ path('contact') }}">Nous contacter</a></li>
+
+				<li><a href="admin.php">Administration</a></li>
+				
+				
+	        
+		      </ul>
+		    </div>
+  		</nav>
+
+
+
+
+	</header>
+
+	<main class="container">
+		
+		
+	{% block content %}{% endblock %}
+
+
+	</main>
+
+
+	<footer>
+		<a href="mailto:aipecloyes@outlook.fr" class="amber-text text-darken-4"><i class="fa fa-envelope-square" aria-hidden="true"></i></a>
+
+
+		<a href="https://www.facebook.com/AIPE-Cloyes-sur-le-Loir-1520497928191426/?fref=ts" class="amber-text text-darken-4"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+
+
+
+
+	</footer>
+
+<script src="{{ asset("dist/js/main.js") }}"></script>
+</body>
+
+{% endblock %}
+
+
+
+

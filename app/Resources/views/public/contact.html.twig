@@ -1,0 +1,93 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
+<h3>Pourquoi nous contacter ?</h3>
+
+	<p>Vous rencontrez un problème avec la scolarité de votre enfant, la cantine, les TAP, les transports scolaires, et vous souhaitez savoir si ce même problème à déjà été rencontré par d’autres parents, ou être représenté par un membre de l’association en vu d’une médiation avec les différents protagonistes.</p></br>
+
+	<p>Vous avez des idées à proposer : pour améliorer la vie scolaire de nos enfants; pour un futur évènement ou animation, etc…</p>
+
+
+<h3>Envoyez-nous un message :</h3>
+
+
+
+
+{% form_theme formContact _self %}
+
+    {%- block form_errors -%}
+        {%- if errors is defined and errors|length > 0 -%}
+            <div class="alert alert-success">
+                {%- for error in errors -%}
+                    <p>{{ error.message }}</p>
+                {%- endfor -%}
+            </div>
+        {%- endif -%}
+    {%- endblock form_errors -%}
+
+    {% for flash_message in app.session.flashBag.get('success') %}
+        <div class="flash-notice">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+
+    {{ form_start(formContact, {attr: {novalidate:"novalidate"}}) }}
+
+   
+
+
+   <div class="row">
+    <form class="col s12">
+
+      	<div class="row">
+		    <div class="input-field col s6">
+		        {# affiche les erreurs du champ firstname #}
+		        {{ form_errors(formContact.firstname) }}
+	  
+		        {# affiche la balise label du champ firtsname #}
+		        {{ form_label(formContact.firstname , "Votre prénom") }}
+
+		        {# affiche la balise input de type text du champ firtsname #}
+		        {{ form_widget(formContact.firstname) }}
+		    </div>
+
+		    <div class="input-field col s6">
+		        {{ form_errors(formContact.lastname) }}
+		        {{ form_label(formContact.lastname, "Votre nom", {label_attr: {class: 'labelform'} } ) }}
+		        {{ form_widget(formContact.lastname)}}
+		    </div>
+	    </div>
+
+    	<div class="row">
+	        <div class="input-field col s12">
+	        {{ form_errors(formContact.email) }}
+	        {{ form_label(formContact.email ,"Votre Mail") }}
+	        {{ form_widget(formContact.email)}}
+
+	    	</div>
+	    </div>
+
+	   <div class="row1">
+	        <div class="input-field col s12">
+		        {{ form_errors(formContact.content) }}
+		       
+		        {{ form_label(formContact.content, "Votre message") }}
+		        {{ form_widget(formContact.content)}}     
+		    </div>
+		</div>
+
+
+
+   
+        
+
+	    <div>
+	            <button class="btn waves-effect waves-light btn-form">Envoyer</button>
+	    </div>
+
+    {{ form_end(formContact) }}
+        </div>
+    </div>
+
+{% endblock %}

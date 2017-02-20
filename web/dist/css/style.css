@@ -1,0 +1,299 @@
+body
+{
+	font-size: 12px.
+font-family: 'Libre Franklin', sans-serif;
+}
+
+
+
+/* header*/
+
+header img
+{
+	width: 170px;
+	text-align: center;
+	border-radius: 10%;
+	box-shadow: 3px 3px 2px  rgba(0, 0, 0, 0.5);
+}
+
+header
+{
+	text-align: center;
+	padding: 15px;
+	background-repeat: no-repeat;
+background: -moz-linear-gradient(top, #ffdd77 0%, #ffecb3 38%, #ffc416 70%, #ffbd07 99%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #ffdd77 0%,#ffecb3 38%,#ffc416 70%,#ffbd07 99%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #ffdd77 0%,#ffecb3 38%,#ffc416 70%,#ffbd07 99%) no-repeat fixed; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdd77', endColorstr='#ffbd07',GradientType=0 ); /* IE6-9 */
+
+}
+
+h1
+{
+	font-size: 6em;
+	font-family: 'Gochi Hand', cursive;	
+	text-shadow: 2px 2px 2px black;
+	
+}
+
+
+h2
+{
+	font-size: 1.5em;
+	color: #FF6F00;
+	margin-top: 30px;
+}
+
+h3
+{
+	font-size: 2em;
+	font-family: 'Gochi Hand', cursive;
+	color: #FFF;
+	text-shadow: 2px 2px 2px black;
+}
+
+
+/*nav*/
+nav ul a
+{
+	font-size: 12px;
+}
+.dropdown-button
+{
+	width: 205px;
+}
+
+.dropdown-content li > a
+{
+	color: #FF6F00;
+	font-size: 12px;
+}
+
+.side-nav a
+{
+	font-size: 12px;
+	text-align: left;
+
+}
+
+.side-nav a
+{
+	color: #FF6F00;
+}
+
+.side-nav a:hover
+{
+	background-color: #FFE79E;
+}
+
+.titre
+{
+	color: #FF6F00;
+	text-align: left;
+	font-size: 14px;
+	padding-left: 20px;
+	font-weight: bold;
+}
+
+nav .side-nav i.material-icons
+{
+	display: inline;
+	padding-left: 5px;
+	font-size: 26px;
+}
+
+nav .side-nav i
+{
+	padding-right: 15px;
+	font-size: 18px;
+	float: right;
+	line-height: 48px;
+
+}
+
+/*main*/
+main
+{
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	
+}
+
+main h2
+{
+	border-bottom: 3px dotted #FFE28B;
+
+}
+
+/*index*/
+.article
+{
+	background-color: rgba(255, 226, 139, 0.6); 
+	margin: 20px;
+}
+
+.article h2
+{
+	border-bottom: 3px solid #FF6F00;
+	padding: 10px;
+}
+
+/*article*/
+
+button
+{
+	margin: 15px;
+}
+
+/*agenda*/
+.evenement
+{
+	margin: 15px;
+}
+
+.fa
+{
+	margin: 5px;
+}
+select
+{
+	display: inline;
+	margin: 15px;
+	text-align: center;
+}
+
+.dateagenda
+{
+  font-size: 1em; /* change icon size */
+  display: block;
+  position: relative;
+  width: 7em;
+  height: 7em;
+  background-color: #fff;
+  border-radius: 0.6em;
+  box-shadow: 0 1px 0 #bdbdbd, 0 2px 0 #fff, 0 3px 0 #bdbdbd, 0 4px 0 #fff, 0 5px 0 #bdbdbd, 0 0 0 1px #bdbdbd;
+  overflow: hidden;
+  
+}
+
+.dateagenda *
+{
+  width: 100%;
+  font-size: 1em;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+
+}
+
+.mois
+{
+  position: absolute;
+  top: 0;
+  padding: 0.4em 0;
+  color: #fff;
+  background-color: #fd9f1b;
+  border-bottom: 1px dashed #f37302;
+  box-shadow: 0 2px 0 #fd9f1b;
+}
+
+.annee
+{
+  position: absolute;
+  bottom: 0.3em;
+  color: #fd9f1b;
+}
+
+.jour
+{
+	font-size: 2.8em;
+  letter-spacing: -0.05em;
+  padding-top: 0.8em;
+  color: #2f2f2f;
+}
+
+#jour,#annee
+{
+	width: 70px;
+}
+
+#mois
+{
+	width: 120px;
+}
+
+/*formulaire*/
+ 
+/* label underline focus color */
+.input-field input[type=text]:focus 
+{
+     border-bottom: 1px solid #ffa000;
+     box-shadow: 0 1px 0 0 #ffa000;
+}
+
+.btn-form
+{
+	background-color: #ffa000;
+}
+
+.btn-form:hover
+{
+	background-color: #FFE28B;
+	color: #ffa000;
+}
+
+/*footer*/
+
+footer
+{
+text-align: center;
+background-color: #FFE28B;
+
+}
+
+
+footer i.fa 
+{
+	
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: 20px;
+
+}
+
+footer a
+{
+	font-size: 3em;
+}
+
+
+
+@media screen and (min-width: 200px) and (max-width: 640px)
+{
+	h1, h2, header img
+	{
+		display: block;
+	}
+	h1
+	{
+		font-size: 2em;
+	}
+
+	h2
+	{
+		font-size: 1em;
+		text-align: center;
+	}
+
+	h3
+	{
+		font-size: 1.5em;
+	}
+
+	header img
+	{
+		width: 75px;
+		margin-bottom: 5px;
+	}
+}
