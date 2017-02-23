@@ -1,0 +1,25 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
+	{% for article in articles %}
+
+		<div class="article">
+
+			<h2>{{ article.titre }}</h2>
+
+			<img style="width: 300px" src="{{ asset("upload/article/"~article.image) }}" alt="image"/>
+
+			<p>{{ article.contenu}}</p>
+
+		</div>
+
+
+
+
+
+	{% endfor %}
+
+
+
+{% endblock %}

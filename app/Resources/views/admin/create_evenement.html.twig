@@ -1,0 +1,76 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
+
+
+{{ form_start(formEvenement, {attr: {novalidate:"novalidate"}}) }}
+
+<div class="box box-success">
+    <div class="box-body">
+
+        <div>
+
+            {{ form_errors(formEvenement.titre) }}
+
+
+            {{ form_label(formEvenement.titre , "Nom de l'evenement")  }}
+
+
+            {{ form_widget(formEvenement.titre) }}
+        </div>
+
+        <div>
+
+            {{ form_errors(formEvenement.contenu) }}
+
+
+            {{ form_label(formEvenement.contenu , "Description de l'evenemen")  }}
+
+
+            {{ form_widget(formEvenement.contenu) }}
+        </div>
+
+        <div>
+
+            {{ form_errors(formEvenement.dateAgenda) }}
+
+
+            {{ form_label(formEvenement.dateAgenda , "Date de l'evenemen")  }}
+
+
+            {{ form_widget(formEvenement.dateAgenda , {
+                attr: {
+                    class: "datepicker form-control"
+                }}) }}
+        </div>
+
+       
+
+
+       {#
+        <div>
+
+            {{ form_errors(formEvenement.image) }}
+
+
+            {{ form_label(formEvenement.image , "Image")  }}
+            <img style="width: 100px" src="{{ asset('upload/article/' ~ article.image) }}" alt="image introuvable"></img>
+            {{ form_widget(formEvenement.image) }}
+        </div>
+        #}
+
+
+        <div>
+            <button class="btn waves-effect waves-light btn-form">Envoyer</button>
+        </div>
+
+        {{ form_end(formEvenement) }}
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

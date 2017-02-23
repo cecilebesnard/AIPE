@@ -2,7 +2,7 @@
 
 {% block body %}
 
-<body>
+
 
 
 	<header>
@@ -19,70 +19,82 @@
 		    <div class="nav-wrapper amber darken-2">
 		   
 		      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-		      <ul class="left hide-on-med-and-down">
-		        <li><a href="{{ path('homepage') }}">Accueil</a></li>
+			    <ul class="left hide-on-med-and-down">
+			        <li><a href="{{ path('homepage') }}">Accueil</a></li>
 
-		        <li><a class="dropdown-button" href="#!" data-activates="representant">Les représentants<i class="material-icons right">arrow_drop_down</i></a></li>
-    
-		        	
-					<!-- Dropdown Structure -->
-					<ul id="representant" class="dropdown-content">
-					  <li><a href="{{ path('definition') }}">Qu'est ce qu'un représentant des parents d'élèves ?</a></li>
-					  <li><a href="{{ path('conseil') }}">Qu'est ce qu'un conseil d'école ?</a></li>
-					  <li class="divider"></li>
-					  <li><a href="{{ path('representants') }}">Les représentants des parents d'élèves</a></li>
-					  <li><a href="{{ path('compte_rendu') }}">Compte rendu des conseils d'école</a></li>
-					</ul>
-
-
-			    <li><a class="dropdown-button" href="#!" data-activates="association">L'Association<i class="material-icons right">arrow_drop_down</i></a></li>
-    
-		        	
-					<!-- Dropdown Structure -->
-					<ul id="association" class="dropdown-content col l3">
-					  <li><a href="{{ path('definition_assoc') }}">Pour quoi faire ?</a></li>
-					  <li><a href="{{ path('statuts') }}">Statuts</a></li>
-					  <li class="divider"></li>
-					  <li><a href="{{ path('adhesion') }}">Bulletin d'adhésion</a></li>
-					  <li><a href="{{ path('bureau') }}">Le bureau</a></li>
-					</ul>
-
-				<li><a href="agenda.php">Evenement et Agenda</a></li>
-    
-		        	
-				
-
-				 <li><a href="{{ path('contact') }}">Nous Contacter</a></li>
-
-				 <li><a href="admin.php">Administration</a></li>
-
-		      </ul>
+			        <li><a class="dropdown-button" href="#!" data-activates="representant">Les représentants<i class="material-icons right">arrow_drop_down</i></a></li>
+	    
+			        	
+						<!-- Dropdown Structure -->
+						<ul id="representant" class="dropdown-content">
+						  <li><a href="{{ path('definition') }}">Qu'est ce qu'un représentant des parents d'élèves ?</a></li>
+						  <li><a href="{{ path('conseil') }}">Qu'est ce qu'un conseil d'école ?</a></li>
+						  <li class="divider"></li>
+						  <li><a href="{{ path('representants') }}">Les représentants des parents d'élèves</a></li>
+						  <li><a href="{{ path('compte_rendu') }}">Compte rendu des conseils d'école</a></li>
+						</ul>
 
 
-		      <ul class="side-nav" id="mobile-demo">
-		        <li><a href="{{ path('homepage') }}">Accueil</a></li>
+				    <li><a class="dropdown-button" href="#!" data-activates="association">L'Association<i class="material-icons right">arrow_drop_down</i></a></li>
+	    
+			        	
+						<!-- Dropdown Structure -->
+						<ul id="association" class="dropdown-content col l3">
+						  <li><a href="{{ path('definition_assoc') }}">Pour quoi faire ?</a></li>
+						  <li><a href="{{ path('statuts') }}">Statuts</a></li>
+						  <li class="divider"></li>
+						  <li><a href="{{ path('adhesion') }}">Bulletin d'adhésion</a></li>
+						  <li><a href="{{ path('bureau') }}">Le bureau</a></li>
+						</ul>
 
-		        <li class="titre">Les représentants<i class="fa fa-users" aria-hidden="true"></i></li>
-		        <li><a href="{{ path('definition') }}">Les représentant des parents d'élèves ?</a></li>
-				<li><a href="{{ path('conseil') }}">Qu'est ce qu'un conseil d'école ?</a></li>	
-				<li><a href="{{ path('representants') }}">Les représentants des parents d'élèves</a></li>
-				<li><a href="{{ path('compte_rendu') }}">Compte rendu des conseils d'école</a></li>
+					<li><a href="agenda.php">Evenement et Agenda</a></li>
+	    
+			        	
+					
 
-				<li class="titre">L'association<i class="material-icons">store</i></li>
-				<li><a href="{{ path('definition_assoc') }}">Pour quoi faire ?</a></li>
-				<li><a href="{{ path('statuts') }}">Statuts</a></li>		
-				<li><a href="{{ path('adhesion') }}">Bulletin d'adhésion</a></li>
-				<li><a href="{{ path('bureau') }}">Le bureau</a></li>
+					<li><a href="{{ path('contact') }}">Nous Contacter</a></li>
 
-				<li class="titre"><a href="agenda.php">Les Evenements et Agenda</a></li>
+				</ul>
 
-				<li><a href="{{ path('contact') }}">Nous contacter</a></li>
+				<ul class="right">
 
-				<li><a href="admin.php">Administration</a></li>
+				 	<li><a class="dropdown-button" href="#!" data-activates="administration">Administration<i class="material-icons right">arrow_drop_down</i></a></li>
+				 		<ul id="administration" class="dropdown-content col l3">
+					 		<li><a href="{{ path('articles') }}">Articles</a></li>
+					 		<li><a href="admin.php">Agenda et Evenements</a></li>
+
+		      	</ul>
+
+
+		      	<ul class="side-nav" id="mobile-demo">
+			        <li><a href="{{ path('homepage') }}">Accueil</a></li>
+
+			        <li class="titre">Les représentants<i class="fa fa-users" aria-hidden="true"></i></li>
+			        <li><a href="{{ path('definition') }}">Les représentant des parents d'élèves ?</a></li>
+					<li><a href="{{ path('conseil') }}">Qu'est ce qu'un conseil d'école ?</a></li>	
+					<li><a href="{{ path('representants') }}">Les représentants des parents d'élèves</a></li>
+					<li><a href="{{ path('compte_rendu') }}">Compte rendu des conseils d'école</a></li>
+
+					<li class="titre">L'association<i class="material-icons">store</i></li>
+					<li><a href="{{ path('definition_assoc') }}">Pour quoi faire ?</a></li>
+					<li><a href="{{ path('statuts') }}">Statuts</a></li>		
+					<li><a href="{{ path('adhesion') }}">Bulletin d'adhésion</a></li>
+					<li><a href="{{ path('bureau') }}">Le bureau</a></li>
+
+					<li class="titre"><a href="agenda.php">Les Evenements et Agenda</a></li>
+
+					<li><a href="{{ path('contact') }}">Nous contacter</a></li>
+
+
+
+					<li class="titre">Administration<i class="material-icons">store</i></li>
+					<li><a href="{{ path('articles') }}">Articles</a></li>
+					<li><a href="admin.php">Agenda et Evenements</a></li>
 				
 				
 	        
-		      </ul>
+		      	</ul>
+
 		    </div>
   		</nav>
 
@@ -111,8 +123,14 @@
 
 	</footer>
 
+
+{% block javascript %}
+
+<script src="{{ asset("plugins/datepicker/jquery-ui.js") }}"></script>
+
 <script src="{{ asset("dist/js/main.js") }}"></script>
-</body>
+{% endblock %}
+
 
 {% endblock %}
 

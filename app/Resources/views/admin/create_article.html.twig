@@ -1,0 +1,57 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
+
+
+{{ form_start(formArticle, {attr: {novalidate:"novalidate"}}) }}
+
+<div class="box box-success">
+    <div class="box-body">
+
+        <div>
+
+            {{ form_errors(formArticle.titre) }}
+
+
+            {{ form_label(formArticle.titre , "Nom de l'article")  }}
+
+
+            {{ form_widget(formArticle.titre) }}
+        </div>
+
+        <div>
+
+            {{ form_errors(formArticle.contenu) }}
+
+
+            {{ form_label(formArticle.contenu , "Description de l'article")  }}
+
+
+            {{ form_widget(formArticle.contenu) }}
+        </div>
+
+        <div>
+
+            {{ form_errors(formArticle.image) }}
+
+
+            {{ form_label(formArticle.image , "Image")  }}
+            <img style="width: 100px" src="{{ asset('upload/article/' ~ article.image) }}" alt="image introuvable"></img>
+            {{ form_widget(formArticle.image) }}
+        </div>
+
+
+        <div>
+            <button class="btn waves-effect waves-light btn-form">Envoyer</button>
+        </div>
+
+        {{ form_end(formArticle) }}
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\Article;
 
 class IndexController extends Controller
 {
@@ -13,7 +14,13 @@ class IndexController extends Controller
      */
     public function indexAction(Request $request)
     {
+        
+    	$em = $this->getDoctrine()->getManager();
+        $articles= $em->getRepository("AppBundle:Article")
+                        ->findAll();
+
+
         // replace this example code with whatever you need
-        return $this->render('layout.html.twig');
+        return $this->render('public/index.html.twig' ,[ 'articles' => $articles ] );
     }
 }

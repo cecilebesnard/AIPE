@@ -1,0 +1,64 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
+{% for flash_message in app.session.flashBag.get('success') %}
+    <div class="flash-notice">
+        {{ flash_message }}
+    </div>
+{% endfor %}
+
+<p><a href="{{ path('nouvelArticle') }}" class="amber-text text-darken-4"><i class="fa fa-pencil-square" aria-hidden="true"></i>
+Saisir un Article</a></p>
+
+
+<p><a href="#" class="amber-text text-darken-4"><i class="fa fa-calendar" aria-hidden="true"></i>Saisir un Evenement</a></p>
+
+
+<h2>Liste des Articles</h2>
+
+		
+
+		 <table class="bordered">
+		        <thead>
+		          <tr>
+		              <th>Date</th>
+		              <th>Titre</th>
+		              <th>Contenu</th>
+		              <th>Image</th>
+					  <th>Action</th>
+		          </tr>
+		        </thead>
+
+		        <tbody>
+				   	{% for article in articles %}
+				
+					<tr>
+						<td>{{ article.dateArticle|date("d/m/Y") }}</td>	
+						<td>{{ article.titre }}</td>	
+						<td>{{ article.contenu }}</td>
+						<td><img style="width: 100px" src="{{ asset("upload/article/"~article.image) }}" alt="image"/></td>
+                               		
+		
+						<td><a href="{{ path('modifArticle',{id:article.id}) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+							<a href="{{ path('supprArticle',{id:article.id}) }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+						</td>
+
+
+
+
+					<!-- Lien (avec picto) pour modifier l'article -->
+					<!-- Lien (avec picto) pour supprimer l'article -->	
+					</tr>
+				
+				{% endfor %}
+		        </tbody>
+		      </table>
+
+
+{% endblock %}
+
+
+
+
