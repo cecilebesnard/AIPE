@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<h1>Formulaire de contact</h1>
+<h2>Demande reçue de : </h2>
+<p>Mail : {{ data.email }}</p>
+<p>Prenom : {{ data.username }}</p>
+<p>Pour confirmer cliquez sur le lien :</p>
+<a href="#">http://localhost/AIPE_SYMFONY/web/app_dev.php/confirmation/{{ data.token }}/{{ data.id }}</a>
+
+</body>
+</html>

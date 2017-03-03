@@ -1,5 +1,7 @@
 {% extends "layout.html.twig" %}
 
+{% block title %} Contact {% endblock %}
+
 {% block content %}
 
 <h3>Pourquoi nous contacter ?</h3>
@@ -37,11 +39,11 @@
    
 
 
-   <div class="row">
-    <form class="col s12">
+   <div class="box box-success">
+    <div class="box-body">
 
-      	<div class="row">
-		    <div class="input-field col s6">
+      	<div class="input-field">
+		    <div>
 		        {# affiche les erreurs du champ firstname #}
 		        {{ form_errors(formContact.firstname) }}
 	  
@@ -52,38 +54,30 @@
 		        {{ form_widget(formContact.firstname) }}
 		    </div>
 
-		    <div class="input-field col s6">
+		    <div>
 		        {{ form_errors(formContact.lastname) }}
-		        {{ form_label(formContact.lastname, "Votre nom", {label_attr: {class: 'labelform'} } ) }}
+		        {{ form_label(formContact.lastname, "Votre nom")}}
 		        {{ form_widget(formContact.lastname)}}
 		    </div>
-	    </div>
 
-    	<div class="row">
-	        <div class="input-field col s12">
+		    <div>
 	        {{ form_errors(formContact.email) }}
 	        {{ form_label(formContact.email ,"Votre Mail") }}
 	        {{ form_widget(formContact.email)}}
 
 	    	</div>
-	    </div>
 
-	   <div class="row1">
-	        <div class="input-field col s12">
+	    	<div>
 		        {{ form_errors(formContact.content) }}
 		       
 		        {{ form_label(formContact.content, "Votre message") }}
 		        {{ form_widget(formContact.content)}}     
 		    </div>
-		</div>
-
-
-
-   
+	    </div>
         
 
 	    <div>
-	            <button class="btn waves-effect waves-light btn-form">Envoyer</button>
+	            <button class="btn waves-effect waves-orange login">Envoyer</button>
 	    </div>
 
     {{ form_end(formContact) }}

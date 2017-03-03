@@ -8,7 +8,13 @@
 
 			<h2>{{ article.titre }}</h2>
 
+			
+
+			{% if article.image != 'imagenondisponible.png' %}
+
 			<img style="width: 300px" src="{{ asset("upload/article/"~article.image) }}" alt="image"/>
+
+			{% endif %}
 
 			<p>{{ article.contenu}}</p>
 

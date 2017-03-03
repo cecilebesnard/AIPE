@@ -1,0 +1,60 @@
+{% extends "layout.html.twig" %}
+
+{% block title %} Creation de compte {% endblock %}
+
+{% block content %}
+
+    {{ form_start(formUser, {attr: {novalidate:"novalidate"}}) }}
+    {{ form_errors(formUser) }}
+
+    <div class="box box-success">
+        <div class="box-body">
+
+            <div class="input-field">
+                <div>
+
+                    {{ form_errors(formUser.username) }}
+
+
+                    {{ form_label(formUser.username , "Nom")  }}
+
+
+                    {{ form_widget(formUser.username) }}
+                </div>
+
+
+                <div>
+
+                    {{ form_errors(formUser.password) }}
+
+
+                    {{ form_label(formUser.password , "Mot de passe")  }}
+
+
+                    {{ form_widget(formUser.password) }}
+                </div>
+
+                <div>
+
+                    {{ form_errors(formUser.email) }}
+
+
+                    {{ form_label(formUser.email , "Email")  }}
+
+
+                    {{ form_widget(formUser.email) }}
+                </div>
+
+            </div>
+
+            <div>
+                <button class="btn waves-effect waves-orange login">Enregister</button>
+            </div>
+
+
+    
+    {{ form_end(formUser) }}
+
+        </div>
+    </div>
+{% endblock %}

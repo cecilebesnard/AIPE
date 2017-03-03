@@ -1,5 +1,7 @@
 {% extends "layout.html.twig" %}
 
+{% block title %} Articles {% endblock %}
+
 {% block content %}
 
 {% for flash_message in app.session.flashBag.get('success') %}
@@ -12,7 +14,7 @@
 Saisir un Article</a></p>
 
 
-<p><a href="#" class="amber-text text-darken-4"><i class="fa fa-calendar" aria-hidden="true"></i>Saisir un Evenement</a></p>
+<p><a href="{{ path('nouvelEvenement') }}" class="amber-text text-darken-4"><i class="fa fa-calendar" aria-hidden="true"></i>Saisir un Evenement</a></p>
 
 
 <h2>Liste des Articles</h2>

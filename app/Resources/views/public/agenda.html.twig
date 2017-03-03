@@ -1,0 +1,71 @@
+{% extends "layout.html.twig" %}
+
+{% block title %} Agenda {% endblock %}
+
+{% block content %}
+
+	{% for agenda in agendas %}
+
+		<div class="dateagenda">
+
+		<p class="jour">
+			{{ agenda.day }}
+		</p>
+
+		<p class="mois">
+
+		{% set mois = agenda.month %}
+			{% if mois == 1 %}
+        			Janvier
+    		{% elseif mois == 2 %}
+        			Fevrier
+    		{% elseif mois == 3 %}
+        			Mars
+        	{% elseif mois == 4 %}
+        			Avril
+        	{% elseif mois == 5 %}
+        			Mai
+        	{% elseif mois == 6 %}
+        			Juin
+        	{% elseif mois == 7 %}
+        			Juillet
+        	{% elseif mois == 8 %}
+        			Aout
+        	{% elseif mois == 9 %}
+        			Septembre
+        	{% elseif mois == 10 %}
+        			Octobre
+        	{% elseif mois == 11 %}
+        			Novembre
+        	{% elseif mois == 12 %}
+        			Decembre
+        	{% endif %}
+			
+		</p>
+		<p class="annee">
+			{{ agenda.year }}
+		</p>
+
+
+
+	</div>
+
+	<div class="evenement">
+
+		<h2>{{ agenda.titre }}</h2>
+		
+		<p>{{ agenda.contenu }}</p>
+	
+
+
+	</div>
+
+
+
+
+
+	{% endfor %}
+
+
+
+{% endblock %}

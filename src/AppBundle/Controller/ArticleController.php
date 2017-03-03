@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class ArticleController extends Controller
 {
     /**
-     * @Route("/articles" , name="articles")
+     * @Route("/admin/articles" , name="articles")
      */
     public function articlesAction()
     {
@@ -47,7 +47,7 @@ class ArticleController extends Controller
 
 
     /**
-     * @Route("/nouvelArticle" , name="nouvelArticle")
+     * @Route("/admin/nouvelArticle" , name="nouvelArticle")
      */
     public function createAction(Request $request)
     {
@@ -99,7 +99,7 @@ class ArticleController extends Controller
 
 
     /**
-     * @Route("/article/modifier/{id}", name="modifArticle" , requirements={"id" = "\d+"})
+     * @Route("/admin/article/modifier/{id}", name="modifArticle" , requirements={"id" = "\d+"})
      */
     public function modifyAction(Request $request , $id)
     {
@@ -150,7 +150,7 @@ class ArticleController extends Controller
 
 
     /**
-     * @Route("/article/supprimer/{id}", name="supprArticle" , requirements={"id" = "\d+"})
+     * @Route("/admin/article/supprimer/{id}", name="supprArticle" , requirements={"id" = "\d+"})
      */
     public function removeAction($id, Request $request)
     {

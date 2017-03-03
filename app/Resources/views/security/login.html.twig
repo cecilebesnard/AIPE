@@ -1,0 +1,45 @@
+{% extends "layout.html.twig" %}
+
+{% block title %} Connexion {% endblock %}
+
+{% block content %}
+{% if error %}
+   <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+
+        <form action="{{ path('security.login') }}" method="post">
+
+<div class="box box-success">
+    <div class="box-body">
+
+          <div class="input-field">
+              <div>
+
+               <label for="username">Username:</label>
+               <input type="text" id="username" name="_username" value="{{ last_username }}" />
+
+              </div>
+
+              <div>
+
+             <label for="password">Password:</label>
+             <input type="password" id="password" name="_password" />
+
+              </div>
+
+          </div>
+
+
+       <input type="hidden" name="_target_path" value="/" />
+  
+
+          <div>
+          <button class="btn waves-effect waves-orange login" type="submit">Connexion</button>
+          </div>
+
+      </form>
+
+    </div>
+</div>
+{% endblock %}

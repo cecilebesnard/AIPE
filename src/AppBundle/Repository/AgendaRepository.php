@@ -11,17 +11,45 @@ namespace AppBundle\Repository;
 class AgendaRepository extends \Doctrine\ORM\EntityRepository
 {
 
+public function agenda()
+	{
+		$query = $this->getEntityManager()->createQueryBuilder()
+            ->select('YEAR(agenda.dateAgenda) AS year , MONTH(agenda.dateAgenda) AS month , DAY(agenda.dateAgenda) AS day , agenda.titre AS titre , agenda.contenu AS contenu , agenda.id AS id ')
+            ->from('AppBundle:Agenda' , 'agenda')
+            ->getQuery();
+        return $query->getResult();
+    }
 
-// a finir avec SELECT YEAR, SELECT DAY, SELECT MONTH
+
+
+// retourne un tableau pour chaque resultat
 public function yearAgenda()
 	{
-		query = $this->getEntityManager()->createQueryBuilder()
-            ->select('YEAR(prod)')
-            ->from('adminBundle:Product' , 'prod')
+		$query = $this->getEntityManager()->createQueryBuilder()
+            ->select('YEAR(agenda.dateAgenda) AS year')
+            ->from('AppBundle:Agenda' , 'agenda')
             ->getQuery();
-        return $query->getOneOrNullResult();
+        return $query->getResult();
     }
-	}
+	
+
+public function monthAgenda()
+	{
+		$query = $this->getEntityManager()->createQueryBuilder()
+            ->select('MONTH(agenda.dateAgenda)')
+            ->from('AppBundle:Agenda' , 'agenda')
+            ->getQuery();
+        return $query->getResult();
+    }
+
+public function dayAgenda()
+	{
+		$query = $this->getEntityManager()->createQueryBuilder()
+            ->select('DAY(agenda.dateAgenda)')
+            ->from('AppBundle:Agenda' , 'agenda')
+            ->getQuery();
+        return $query->getResult();
+    }
 
 }
 

@@ -1,5 +1,7 @@
 {% extends "layout.html.twig" %}
 
+{% block title %} Nouvel évènement {% endblock %}
+
 {% block content %}
 
 
@@ -9,43 +11,45 @@
 <div class="box box-success">
     <div class="box-body">
 
-        <div>
+        <div class="input-field">
 
-            {{ form_errors(formEvenement.titre) }}
+            <div>
+
+                {{ form_errors(formEvenement.titre) }}
 
 
-            {{ form_label(formEvenement.titre , "Nom de l'evenement")  }}
+                {{ form_label(formEvenement.titre , "Nom de l'evenement")  }}
 
 
-            {{ form_widget(formEvenement.titre) }}
+                {{ form_widget(formEvenement.titre) }}
+            </div>
+
+            <div>
+
+                {{ form_errors(formEvenement.contenu) }}
+
+
+                {{ form_label(formEvenement.contenu , "Description de l'evenement")  }}
+
+
+                {{ form_widget(formEvenement.contenu) }}
+            </div>
+
+            <div>
+
+                {{ form_errors(formEvenement.dateAgenda) }}
+
+
+                {{ form_label(formEvenement.dateAgenda , "Date de l'evenement")  }}
+
+
+                {{ form_widget(formEvenement.dateAgenda , {
+                    attr: {
+                        class: "datepicker form-control"
+                    }}) }}
+            </div>
+
         </div>
-
-        <div>
-
-            {{ form_errors(formEvenement.contenu) }}
-
-
-            {{ form_label(formEvenement.contenu , "Description de l'evenemen")  }}
-
-
-            {{ form_widget(formEvenement.contenu) }}
-        </div>
-
-        <div>
-
-            {{ form_errors(formEvenement.dateAgenda) }}
-
-
-            {{ form_label(formEvenement.dateAgenda , "Date de l'evenemen")  }}
-
-
-            {{ form_widget(formEvenement.dateAgenda , {
-                attr: {
-                    class: "datepicker form-control"
-                }}) }}
-        </div>
-
-       
 
 
        {#
@@ -62,7 +66,7 @@
 
 
         <div>
-            <button class="btn waves-effect waves-light btn-form">Envoyer</button>
+            <button class="btn waves-effect waves-orange login">Envoyer</button>
         </div>
 
         {{ form_end(formEvenement) }}

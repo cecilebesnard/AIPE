@@ -1,7 +1,13 @@
+html
+{
+	height: 100%;
+}
+
 body
 {
 	font-size: 12px.
-font-family: 'Libre Franklin', sans-serif;
+	font-family: 'Libre Franklin', sans-serif;
+	height: 100%;
 }
 
 
@@ -81,6 +87,7 @@ nav ul a
 	color: #FF6F00;
 }
 
+
 .side-nav a:hover
 {
 	background-color: #FFE79E;
@@ -91,9 +98,10 @@ nav ul a
 	color: #FF6F00;
 	text-align: left;
 	font-size: 14px;
-	padding-left: 20px;
+	padding-left: 5px;
 	font-weight: bold;
 }
+
 
 nav .side-nav i.material-icons
 {
@@ -117,7 +125,10 @@ main
 	text-align: center;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	
+	max-width:1280px;
+	min-height:100%;
+	margin:0 auto;
+	position:relative;
 }
 
 main h2
@@ -125,6 +136,13 @@ main h2
 	border-bottom: 3px dotted #FFE28B;
 
 }
+
+textarea
+{
+	height: 200px;
+}
+
+
 
 /*index*/
 .article
@@ -147,6 +165,13 @@ button
 }
 
 /*agenda*/
+
+#appbundle_agenda_dateAgenda
+{
+	width: 50%;
+}
+
+
 .evenement
 {
 	margin: 15px;
@@ -226,18 +251,53 @@ select
 /*formulaire*/
  
 /* label underline focus color */
-.input-field input[type=text]:focus 
+.input-field input[type="text"]:focus, .input-field input[type="date"]:focus, 
+.input-field input[type="email"]:focus, .input-field input[type="password"]:focus
 {
      border-bottom: 1px solid #ffa000;
      box-shadow: 0 1px 0 0 #ffa000;
 }
 
-.btn-form
+
+label .required, label
+{
+	display: block;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	font-size: 1rem;
+
+}
+
+.input-field label
+{
+	position: relative;
+}
+
+input[type="date"], input[type="text"], input[type="email"], input[type="password"]
+{
+	height: 1rem;
+	text-align: center;
+}
+
+
+
+.btn
 {
 	background-color: #ffa000;
 }
 
-.btn-form:hover
+.login
+{
+	background-color: #FF6F04;
+}
+
+.btn:hover
+{
+	background-color: #FFE28B;
+	color: #ffa000;
+}
+
+.btn:focus
 {
 	background-color: #FFE28B;
 	color: #ffa000;
@@ -247,8 +307,11 @@ select
 
 footer
 {
-text-align: center;
-background-color: #FFE28B;
+	text-align: center;
+	background-color: #FFE28B;
+ 	position:relative;
+	bottom:0;
+	width:100%;
 
 }
 

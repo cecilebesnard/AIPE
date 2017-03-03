@@ -1,5 +1,7 @@
 {% extends "layout.html.twig" %}
 
+{% block title %} Agenda {% endblock %}
+
 {% block content %}
 
 {% for flash_message in app.session.flashBag.get('success') %}
@@ -12,10 +14,10 @@
 Saisir un Article</a></p>
 
 
-<p><a href="#" class="amber-text text-darken-4"><i class="fa fa-calendar" aria-hidden="true"></i>Saisir un Evenement</a></p>
+<p><a href="{{ path('nouvelEvenement') }}" class="amber-text text-darken-4"><i class="fa fa-calendar" aria-hidden="true"></i>Saisir un Evenement</a></p>
 
 
-<h2>Liste des Articles</h2>
+<h2>Liste des Evenements</h2>
 
 		
 
@@ -24,24 +26,33 @@ Saisir un Article</a></p>
 		          <tr>
 		              <th>Date</th>
 		              <th>Titre</th>
-		              <th>Contenu</th>
-		              <th>Image</th>
+		              <th>Contenu</th>		        
 					  <th>Action</th>
 		          </tr>
 		        </thead>
 
 		        <tbody>
-				   	{% for article in articles %}
+				   	
+				   	{% for agenda in agendas %}
 				
 					<tr>
-						<td>{{ article.dateArticle|date("d/m/Y") }}</td>	
-						<td>{{ article.titre }}</td>	
-						<td>{{ article.contenu }}</td>
-						<td><img style="width: 100px" src="{{ asset("upload/article/"~article.image) }}" alt="image"/></td>
+						
+						
+						
+						<td>
+							{{ agenda.day }}/{{ agenda.month }}/{{ agenda.year }} 
+						</td>	
+					
+
+
+
+						<td>{{ agenda.titre }}</td>	
+						<td>{{ agenda.contenu }}</td>
+						
                                		
 		
-						<td><a href="{{ path('modifArticle',{id:article.id}) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-							<a href="{{ path('supprArticle',{id:article.id}) }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+						<td><a href="{{ path('modifevenement',{id:agenda.id}) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+							<a href="{{ path('supprevenement',{id:agenda.id}) }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
 
 						</td>
 
