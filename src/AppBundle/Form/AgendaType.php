@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class AgendaType extends AbstractType
 {
@@ -17,7 +18,12 @@ class AgendaType extends AbstractType
         $builder->add('titre')
                 ->add('contenu')
                 ->add('dateAgenda', DateType::class, [
-   'widget' => 'single_text']);
+                        'widget' => 'single_text',
+                        'constraints' =>
+                        [
+                            new Assert\NotBlank(['message' => '* Veuillez ajouter une date'])
+                        ]
+                    ]);
     }
     
     /**

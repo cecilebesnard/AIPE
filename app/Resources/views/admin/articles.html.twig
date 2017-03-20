@@ -5,7 +5,7 @@
 {% block content %}
 
 {% for flash_message in app.session.flashBag.get('success') %}
-    <div class="flash-notice">
+    <div class="successMessage">
         {{ flash_message }}
     </div>
 {% endfor %}
@@ -38,7 +38,7 @@ Saisir un Article</a></p>
 					<tr>
 						<td>{{ article.dateArticle|date("d/m/Y") }}</td>	
 						<td>{{ article.titre }}</td>	
-						<td>{{ article.contenu }}</td>
+                                                <td>{{ article.contenu|slice(0,400)|raw |nl2br}}</td>
 						<td><img style="width: 100px" src="{{ asset("upload/article/"~article.image) }}" alt="image"/></td>
                                		
 		
@@ -53,10 +53,13 @@ Saisir un Article</a></p>
 					<!-- Lien (avec picto) pour modifier l'article -->
 					<!-- Lien (avec picto) pour supprimer l'article -->	
 					</tr>
+                                        
+                                        
 				
 				{% endfor %}
 		        </tbody>
 		      </table>
+                      
 
 
 {% endblock %}

@@ -4,10 +4,16 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
 * @ORM\Table(name="user")
 * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+* @UniqueEntity( "username",
+* message="Un compte existe déjà avec ce nom")
+* @UniqueEntity( "email",
+* message="Un compte existe déjà avec ce mail") 
+*  
 */
 class User implements UserInterface, \Serializable
 {

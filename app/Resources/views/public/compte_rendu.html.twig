@@ -4,7 +4,39 @@
 
 {% block content %}
 
+     <h2>Liste des comptes-rendus</h2>
+     
+     
+     
+    <table class="bordered">
+		       
 
-<a href="{{ asset("upload/compte_rendu/fichier.docx") }}"> Telecharger le compte-rendu</a>
+		        <tbody>
+				   	
+				   	{% for compteRendu in comptesRendus %}
+				
+					<tr>
+						
+						
+						
+						<td>
+							{{ compteRendu.Titre }} 
+						</td>	
+					
+
+
+
+                                                <td><a href="{{ asset("upload/compte_rendu/"~compteRendu.fichier) }}"><i class="fa fa-download" aria-hidden="true"></i>
+</a></td>
+						
+                         	
+					</tr>
+				
+				{% endfor %}
+		        </tbody>
+		      </table>
+
+    
+
 
 {% endblock %}

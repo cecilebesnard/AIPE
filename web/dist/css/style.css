@@ -48,6 +48,14 @@ h2
 	font-size: 1.5em;
 	color: #FF6F00;
 	margin-top: 10px;
+        
+}
+
+main h2
+{
+    margin-top: 5%;
+        margin-bottom: 5%;
+        padding-bottom: 1%;
 }
 
 h3
@@ -58,11 +66,23 @@ h3
 	text-shadow: 2px 2px 2px black;
 }
 
+.successMessage
+{
+    background-color: #FFE79F;
+    color: #FF6F00;
+    border: solid 1px #FF6F00;
+    border-radius: 7px;
+}
 
 /*nav*/
 nav ul a
 {
 	font-size: 12px;
+}
+
+.bonjour
+{
+    font-size: 0.8rem;
 }
 .dropdown-button
 {
@@ -117,6 +137,11 @@ nav .side-nav i
 	float: right;
 	line-height: 48px;
 
+}
+
+.fa-sign-in, .fa-sign-out
+{
+    font-size: 1.5rem;
 }
 
 /*main*/
@@ -277,6 +302,7 @@ input[type="date"], input[type="text"], input[type="email"], input[type="passwor
 {
 	height: 1rem;
 	text-align: center;
+        width: 50%;
 }
 
 
@@ -303,6 +329,18 @@ input[type="date"], input[type="text"], input[type="email"], input[type="passwor
 	color: #ffa000;
 }
 
+.erreur
+{
+    color: red;
+    margin: 2%;
+    
+}
+
+.erreur p
+{
+    text-align: center;
+}
+
 /*footer*/
 
 footer
@@ -321,7 +359,7 @@ footer i.fa
 	
 	margin-top: 30px;
 	margin-bottom: 30px;
-	margin-left: 20px;
+	
 
 }
 
@@ -330,6 +368,15 @@ footer a
 	font-size: 3em;
 }
 
+.mention
+{
+	font-size: 0.8rem;
+	display: block;
+	color: #FF6F00;
+	text-align: center;
+	padding-bottom: 10px;
+
+}
 
 
 @media screen and (min-width: 200px) and (max-width: 640px)

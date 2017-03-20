@@ -4,9 +4,8 @@
 
 {% block content %}
 
-
-
 {{ form_start(formEvenement, {attr: {novalidate:"novalidate"}}) }}
+
 
 <div class="box box-success">
     <div class="box-body">
@@ -37,8 +36,9 @@
 
             <div>
 
+               
                 {{ form_errors(formEvenement.dateAgenda) }}
-
+                
 
                 {{ form_label(formEvenement.dateAgenda , "Date de l'evenement")  }}
 

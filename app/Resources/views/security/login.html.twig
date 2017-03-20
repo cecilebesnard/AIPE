@@ -4,8 +4,10 @@
 
 {% block content %}
 {% if error %}
-   <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
+
+    <div class="erreur">{{ error.message }}</div>
+
+  {% endif %}
 
 
         <form action="{{ path('security.login') }}" method="post">

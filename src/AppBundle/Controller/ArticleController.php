@@ -7,10 +7,6 @@ use AppBundle\Form\ArticleType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
-
-
-
 
 class ArticleController extends Controller
 {
@@ -88,7 +84,7 @@ class ArticleController extends Controller
 
             $this->addFlash('success' , 'Votre article a bien été ajouté');
 
-            return $this->redirectToRoute('nouvelArticle');
+            return $this->redirectToRoute('articles');
         }
 
          return $this->render('admin/create_article.html.twig', [
@@ -107,6 +103,9 @@ class ArticleController extends Controller
         $article= $em->getRepository("AppBundle:Article")
             ->find($id);
 
+        
+        $imageold = $article->getImage();
+        
         if(!$article)
         {
             throw $this->createNotFoundException('Cet article n\'existe pas');
@@ -122,23 +121,29 @@ class ArticleController extends Controller
         	//recuperation de l'image
 			$image = $article->getImage();
 
+                        if(empty($image))
+                        {
+                            $fileName = $imageold;
+                        }
+                        else
+                        {
 			//service utils
 			$serviceUtils = $this->get('app.service.utils.string');
 			$fileName = $serviceUtils->generateUniqId() . '.' .$image->guessExtension() ;
 
 			//transfert de l'image
 			$image->move('upload/article' , $fileName );
-
+                        }
 
 			//non unique ds la BDD
 			$article->setImage($fileName);
-
+                        
         	$em->persist($article);
             $em->flush();
 
             $this->addFlash('success' , 'Votre article a bien été modifié');
 
-            return $this->redirectToRoute('article', ['id' => $id]);
+            return $this->redirectToRoute('articles');
         }
 
 
@@ -166,7 +171,7 @@ class ArticleController extends Controller
         $em->remove($article);
         $em->flush();
 
-        $this->addFlash('success3' , 'Votre article a bien été supprimé');
+        $this->addFlash('success' , 'Votre article a bien été supprimé');
 
 
         // Redirection sur la page qui liste tous les produits

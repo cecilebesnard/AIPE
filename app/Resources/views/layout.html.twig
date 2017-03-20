@@ -31,7 +31,7 @@
 						  <li><a href="{{ path('conseil') }}">Qu'est ce qu'un conseil d'école ?</a></li>
 						  <li class="divider"></li>
 						  <li><a href="{{ path('representants') }}">Les représentants des parents d'élèves</a></li>
-						  <li><a href="{{ path('compte_rendu') }}">Compte rendu des conseils d'école</a></li>
+						  <li><a href="{{ path('telechargerCompteRendu') }}">Compte rendu des conseils d'école</a></li>
 						</ul>
 
 
@@ -57,32 +57,39 @@
 
 					{% if is_granted('ROLE_ADMIN') %}
                        
-				
+                                            
 
 				 	<li><a class="dropdown-button" href="#!" data-activates="administration">Administration<i class="material-icons right">arrow_drop_down</i></a></li>
 
 				 		<ul id="administration" class="dropdown-content col l3">
 					 		<li><a href="{{ path('articles') }}">Articles</a></li>
 					 		<li><a href="{{ path('agendaAdmin') }}">Agenda et Evenements</a></li>
-					 		<li><a href="{{ path('security.account') }}">Creation de compte administrateur</a></li>
+					 		<li><a href="{{ path('security.account') }}">Comptes administrateur</a></li>
+                                                        <li><a href="{{ path('comptesRendus') }}">Gestion des comptes-rendus</a></li>
 					 	</ul>
 
-		  
+                                        
 
 		       {% endif %}
+                       
+                      
+                    
 
 				</ul>
 
 				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-
+                                   
+                                    
 				<ul class="right">
-                    <a href="{{ path("security.logout") }}"><button type="button" class="btn waves-effect waves-orange login">Deconnexion</button></a>
-                </ul>
+                                    
+                                    <li class="bonjour">Bonjour {{ app.user.username }}<li>
+                                    <li><a href="{{ path("security.logout") }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                                </ul>
 
                 {% else %}
 
                 <ul class="right">
-                <a href="{{ path("security.login") }}"><button type="button" class="btn waves-effect waves-orange  login">Connexion</button></a>
+                <a href="{{ path("security.login") }}"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
                 </ul>
 
                 {% endif %}
@@ -100,7 +107,7 @@
 			        <li><a href="{{ path('definition') }}">Les représentant des parents d'élèves ?</a></li>
 					<li><a href="{{ path('conseil') }}">Qu'est ce qu'un conseil d'école ?</a></li>	
 					<li><a href="{{ path('representants') }}" >Les représentants des parents d'élèves</a></li>
-					<li><a href="{{ path('compte_rendu') }}" >Compte rendu des conseils d'école</a></li>
+					<li><a href="{{ path('telechargerCompteRendu') }}" >Compte rendu des conseils d'école</a></li>
 
 					<li class="titre">L'association<i class="material-icons">store</i></li>
 					<li><a href="{{ path('definition_assoc') }}" >Pour quoi faire ?</a></li>
@@ -120,7 +127,8 @@
 					<li class="titre">Administration<i class="material-icons">https</i></li>
 					<li><a href="{{ path('articles') }}" >Articles</a></li>
 					<li><a href="{{ path('agendaAdmin') }}" >Agenda et Evenements</a></li>
-					<li><a href="{{ path('security.account') }}">Creation de compte administrateur</a></li>
+					<li><a href="{{ path('security.account') }}">Comptes administrateur</a></li>
+                                        <li><a href="{{ path('comptesRendus') }}">Gestion des comptes-rendus</a></li>
 					{% endif %}
 				
 				
@@ -150,6 +158,8 @@
 
 		<a href="https://www.facebook.com/AIPE-Cloyes-sur-le-Loir-1520497928191426/?fref=ts" class="amber-text text-darken-4"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 
+
+		<a href="{{ path('mentions') }}" class="mention">Mentions Legales</a>
 
 
 

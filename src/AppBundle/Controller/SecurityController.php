@@ -112,13 +112,18 @@ class SecurityController extends Controller
                 );
             $this->get('mailer')->send($message);
 
-            $this->addFlash('success' , 'Votre User a bien été ajouté');
+            $this->addFlash('success' , 'Le compte a bien été ajouté');
 
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('security.account');
         }
 
+        
+        $em = $this->getDoctrine()->getManager();
+        $users= $em->getRepository("AppBundle:User")
+                        ->findAll();
+        
         return $this->render('security/accountCreate.html.twig', [
-            'formUser' => $formUser->createView() , 'user' => $user
+            'formUser' => $formUser->createView() , 'user' => $user , 'users' => $users
         ]);
     }
 
@@ -146,6 +151,32 @@ class SecurityController extends Controller
         return $this->render('security/accountNoConfirmation.html.twig');
 
 
+
+    }
+    
+    
+    /**
+     * @Route("/admin/account/supprimer/{id}", name="suppraccount" , requirements={"id" = "\d+"})
+     */
+    public function removeAction($id, Request $request)
+    {
+    	$em = $this->getDoctrine()->getManager();
+        $account= $em->getRepository("AppBundle:User")
+            ->find($id);
+
+        if(!$account)
+        {
+            throw $this->createNotFoundException('Ce compte n\'existe pas');
+        }
+
+        $em->remove($account);
+        $em->flush();
+
+        $this->addFlash('success' , 'Le compte a bien été supprimé');
+
+
+        // Redirection sur la page qui liste tous les produits
+        return $this->redirectToRoute('security.account');
 
     }
 }

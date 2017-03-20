@@ -1,0 +1,98 @@
+{% extends "layout.html.twig" %}
+
+{% block title %} Agenda {% endblock %}
+
+{% block content %}
+    
+    
+    {% for flash_message in app.session.flashBag.get('success') %}
+    <div class="successMessage">
+        {{ flash_message }}
+    </div>
+    {% endfor %}
+    
+    
+    <h2>Liste des comptes-rendus</h2>
+    <table class="bordered">
+		        <thead>
+		          <tr>
+		              
+		              <th>Titre ou date de la reunion</th>
+		              
+		          </tr>
+		        </thead>
+
+		        <tbody>
+				   	
+				   	{% for compteRendu in comptesRendus %}
+				
+					<tr>
+						
+						
+						
+						<td>
+							{{ compteRendu.Titre }} 
+						</td>	
+					
+
+						<td><a href="{{ asset("upload/compte_rendu/"~compteRendu.fichier) }}"><i class="fa fa-download" aria-hidden="true" title="telecharger"></i></a>
+                                                    <a href="{{ path('modifcompteRendu',{id:compteRendu.id}) }}"><i class="fa fa-pencil" aria-hidden="true" title="modifier"></i></a>
+							<a href="{{ path('supprcompteRendu',{id:compteRendu.id}) }}"><i class="fa fa-trash" aria-hidden="true" title="supprimer"></i></a>
+
+						</td>
+
+	
+					</tr>
+				
+				{% endfor %}
+		        </tbody>
+		      </table>
+
+
+
+       <h2>Enregistrer les fichiers</h2>                         
+                                
+{{ form_start(formcompteRendu, {attr: {novalidate:"novalidate"}}) }}
+
+<div class="box box-success">
+    <div class="box-body">
+
+        <div class="input-field">
+            <div>
+
+                {{ form_errors(formcompteRendu.titre) }}
+
+
+                {{ form_label(formcompteRendu.titre , "Titre ou Date de la reunion")  }}
+
+
+                {{ form_widget(formcompteRendu.titre) }}
+            </div>
+
+
+            <div>
+
+                {{ form_errors(formcompteRendu.fichier) }}
+
+
+                {{ form_label(formcompteRendu.fichier , "Fichier")  }}
+                
+              
+                {{ form_widget(formcompteRendu.fichier) }}
+            </div>
+
+        </div>
+
+
+        <div>
+            <button class="btn waves-effect waves-orange login">Envoyer</button>
+        </div>
+
+        {{ form_end(formcompteRendu) }}
+    </div>
+</div>
+
+
+
+    
+{% endblock %}

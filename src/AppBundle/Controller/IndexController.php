@@ -23,4 +23,21 @@ class IndexController extends Controller
         // replace this example code with whatever you need
         return $this->render('public/index.html.twig' ,[ 'articles' => $articles ] );
     }
+
+
+    /**
+     * @Route("/mentionsLegales", name="mentions")
+     */
+    public function mentionsAction(Request $request)
+    {
+        
+
+        // replace this example code with whatever you need
+        return $this->render('public/mentionsLegales.html.twig');
+    }
+
+
 }
+
+
+

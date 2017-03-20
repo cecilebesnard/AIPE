@@ -5,7 +5,7 @@
 {% block content %}
 
 {% for flash_message in app.session.flashBag.get('success') %}
-    <div class="flash-notice">
+    <div class="successMessage">
         {{ flash_message }}
     </div>
 {% endfor %}
@@ -47,7 +47,7 @@ Saisir un Article</a></p>
 
 
 						<td>{{ agenda.titre }}</td>	
-						<td>{{ agenda.contenu }}</td>
+						<td>{{ agenda.contenu|slice(0,400)|raw |nl2br }}</td>
 						
                                		
 		

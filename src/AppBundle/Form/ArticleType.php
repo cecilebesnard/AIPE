@@ -16,7 +16,8 @@ class ArticleType extends AbstractType
     {
         $builder->add('titre')
                 ->add('contenu')
-                ->add('image' , FileType::class ,['data_class' => null]);
+                ->add('image' , FileType::class ,[
+                    'data_class' => null]);
     }
     
     /**

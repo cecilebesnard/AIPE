@@ -102,7 +102,7 @@ class AgendaAdminController extends Controller
 
             $this->addFlash('success' , 'Votre evenement a bien été ajouté');
 
-            return $this->redirectToRoute('nouvelevenement');
+            return $this->redirectToRoute('agendaAdmin');
         }
 
          return $this->render('admin/create_evenement.html.twig', [
@@ -159,7 +159,7 @@ class AgendaAdminController extends Controller
 
             $this->addFlash('success' , 'Votre evenement a bien été modifié');
 
-            return $this->redirectToRoute('agenda', ['id' => $id]);
+            return $this->redirectToRoute('agendaAdmin');
         }
 
 
@@ -187,7 +187,7 @@ class AgendaAdminController extends Controller
         $em->remove($evenement);
         $em->flush();
 
-        $this->addFlash('success3' , 'Votre evenement a bien été supprimé');
+        $this->addFlash('success' , 'Votre evenement a bien été supprimé');
 
 
         // Redirection sur la page qui liste tous les produits

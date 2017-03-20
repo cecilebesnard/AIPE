@@ -3,6 +3,51 @@
 {% block title %} Creation de compte {% endblock %}
 
 {% block content %}
+    
+    {% for flash_message in app.session.flashBag.get('success') %}
+    <div class="successMessage">
+        {{ flash_message }}
+    </div>
+    {% endfor %}
+    
+    <h2>Liste des administrateurs</h2>
+
+       
+       <table class="bordered">
+		       
+
+		        <tbody>
+				   	
+				   	   {% for user in users%}
+				
+					<tr>
+						
+						
+						
+						<td>
+							{{ user.username }} 
+						</td>	
+					
+
+
+
+                                                <td>{{ user.email }}</td>
+                                                
+                                                <td>
+							<a href="{{ path('suppraccount',{id:user.id}) }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+						</td>
+						
+                         	
+					</tr>
+				
+				{% endfor %}
+		        </tbody>
+		      </table>
+       
+       
+
+                        <h2>Creation de compte administrateur</h2>
 
     {{ form_start(formUser, {attr: {novalidate:"novalidate"}}) }}
     {{ form_errors(formUser) }}
