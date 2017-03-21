@@ -34,7 +34,7 @@
                                                 <td>{{ user.email }}</td>
                                                 
                                                 <td>
-							<a href="{{ path('suppraccount',{id:user.id}) }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+							<a href="{{ path('suppraccount',{id:user.id}) }}"><i class="fa fa-trash" aria-hidden="true" title="supprimer"></i></a>
 
 						</td>
 						
@@ -47,7 +47,7 @@
        
        
 
-                        <h2>Creation de compte administrateur</h2>
+                        <h2>Création de compte administrateur</h2>
 
     {{ form_start(formUser, {attr: {novalidate:"novalidate"}}) }}
     {{ form_errors(formUser) }}

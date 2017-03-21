@@ -5,12 +5,9 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -89,7 +86,7 @@ class ContactController extends Controller
             $this->get('mailer')->send($message);
 
             // Affichage du message de success
-            $this->addFlash('success', 'Votre email a bien été envoyé');
+            $this->addFlash('success', 'Votre message a bien été envoyé');
             // Redirection
             return $this->redirectToRoute('contact');
 

@@ -8,7 +8,7 @@
 
 	<p>Vous rencontrez un problème avec la scolarité de votre enfant, la cantine, les TAP, les transports scolaires, et vous souhaitez savoir si ce même problème à déjà été rencontré par d’autres parents, ou être représenté par un membre de l’association en vu d’une médiation avec les différents protagonistes.</p></br>
 
-	<p>Vous avez des idées à proposer : pour améliorer la vie scolaire de nos enfants; pour un futur évènement ou animation, etc…</p>
+	<p>Vous avez des idées à proposer : pour améliorer la vie scolaire de nos enfants, pour un futur évènement ou animation, etc…</p>
 
 
 <h3>Envoyez-nous un message :</h3>
@@ -18,18 +18,9 @@
 
 {% form_theme formContact _self %}
 
-    {%- block form_errors -%}
-        {%- if errors is defined and errors|length > 0 -%}
-            <div class="alert alert-success">
-                {%- for error in errors -%}
-                    <p>{{ error.message }}</p>
-                {%- endfor -%}
-            </div>
-        {%- endif -%}
-    {%- endblock form_errors -%}
 
     {% for flash_message in app.session.flashBag.get('success') %}
-        <div class="flash-notice">
+        <div class="successMessage">
             {{ flash_message }}
         </div>
     {% endfor %}
@@ -44,13 +35,9 @@
 
       	<div class="input-field">
 		    <div>
-		        {# affiche les erreurs du champ firstname #}
-		        {{ form_errors(formContact.firstname) }}
-	  
-		        {# affiche la balise label du champ firtsname #}
-		        {{ form_label(formContact.firstname , "Votre prénom") }}
-
-		        {# affiche la balise input de type text du champ firtsname #}
+		       
+		        {{ form_errors(formContact.firstname) }}	        
+		        {{ form_label(formContact.firstname , "Votre prénom") }}     
 		        {{ form_widget(formContact.firstname) }}
 		    </div>
 

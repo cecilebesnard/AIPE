@@ -14,14 +14,14 @@
 Saisir un Article</a></p>
 
 
-<p><a href="{{ path('nouvelEvenement') }}" class="amber-text text-darken-4"><i class="fa fa-calendar" aria-hidden="true"></i>Saisir un Evenement</a></p>
+<p><a href="{{ path('nouvelEvenement') }}" class="amber-text text-darken-4"><i class="fa fa-calendar" aria-hidden="true"></i>Saisir un Evènement</a></p>
 
 
 <h2>Liste des Articles</h2>
 
 		
 
-		 <table class="bordered">
+		 <table class="bordered responsive-table">
 		        <thead>
 		          <tr>
 		              <th>Date</th>
@@ -42,8 +42,8 @@ Saisir un Article</a></p>
 						<td><img style="width: 100px" src="{{ asset("upload/article/"~article.image) }}" alt="image"/></td>
                                		
 		
-						<td><a href="{{ path('modifArticle',{id:article.id}) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-							<a href="{{ path('supprArticle',{id:article.id}) }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+						<td><a href="{{ path('modifArticle',{id:article.id}) }}"><i class="fa fa-pencil" aria-hidden="true" title="modifier"></i></a>
+							<a href="{{ path('supprArticle',{id:article.id}) }}"><i class="fa fa-trash" aria-hidden="true" title="supprimer"></i></a>
 
 						</td>
 
