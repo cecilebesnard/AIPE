@@ -54,7 +54,7 @@ class AgendaAdminController extends Controller
             ->find($id);
 
         if (empty($evenement)) {
-            throw $this->createNotFoundException("Cet evenement n'existe pas");
+            throw $this->createNotFoundException("Cet évènement n'existe pas");
         }
 
        
@@ -76,31 +76,10 @@ class AgendaAdminController extends Controller
         {
         	$em = $this->getDoctrine()->getManager();
 
-        	/*
-            //recuperation de l'image
-			$image = $evenement->getImage();
-
-			if(empty($image))
-			{
-				$fileName = "imagenondisponible.png";
-			}
-			else
-			{
-				//service utils
-				$serviceUtils = $this->get('app.service.utils.string');
-				$fileName = $serviceUtils->generateUniqId() . '.' .$image->guessExtension() ;
-				//transfert de l'image
-				$image->move('upload/agenda' , $fileName );
-			}
-
-			//non unique ds la BDD
-			$agenda->setImage($fileName);*/
-
-
         	$em->persist($evenement);
             $em->flush();
 
-            $this->addFlash('success' , 'Votre evenement a bien été ajouté');
+            $this->addFlash('success' , 'Votre évènement a bien été ajouté');
 
             return $this->redirectToRoute('agendaAdmin');
         }
@@ -123,7 +102,7 @@ class AgendaAdminController extends Controller
 
         if(!$evenement)
         {
-            throw $this->createNotFoundException('Cet evenement n\'existe pas');
+            throw $this->createNotFoundException('Cet évènement n\'existe pas');
         }
 
         $formEvenement = $this->createForm(agendaType::class , $evenement);
@@ -132,32 +111,11 @@ class AgendaAdminController extends Controller
         if ($formEvenement->isSubmitted() && $formEvenement->isValid())
         {
             $em = $this->getDoctrine()->getManager();
-
-            /*
-            //recuperation de l'image
-            $image = $evenement->getImage();
-
-            if(empty($image))
-            {
-                $fileName = "imagenondisponible.png";
-            }
-            else
-            {
-                //service utils
-                $serviceUtils = $this->get('app.service.utils.string');
-                $fileName = $serviceUtils->generateUniqId() . '.' .$image->guessExtension() ;
-                //transfert de l'image
-                $image->move('upload/agenda' , $fileName );
-            }
-
-            //non unique ds la BDD
-            $agenda->setImage($fileName);*/
-
-
+ 
             $em->persist($evenement);
             $em->flush();
 
-            $this->addFlash('success' , 'Votre evenement a bien été modifié');
+            $this->addFlash('success' , 'Votre évènement a bien été modifié');
 
             return $this->redirectToRoute('agendaAdmin');
         }
@@ -181,13 +139,13 @@ class AgendaAdminController extends Controller
 
         if(!$evenement)
         {
-            throw $this->createNotFoundException('Cet evenement n\'existe pas');
+            throw $this->createNotFoundException('Cet évènement n\'existe pas');
         }
 
         $em->remove($evenement);
         $em->flush();
 
-        $this->addFlash('success' , 'Votre evenement a bien été supprimé');
+        $this->addFlash('success' , 'Votre évènement a bien été supprimé');
 
 
         // Redirection sur la page qui liste tous les produits
